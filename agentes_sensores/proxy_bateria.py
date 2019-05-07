@@ -1,5 +1,5 @@
 """
-
+Primera version: simula una lectura
 """
 
 
