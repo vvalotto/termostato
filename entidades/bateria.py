@@ -23,7 +23,3 @@ class Bateria:
             self._indicador = "NORMAL"
         self._nivel_de_carga = valor
         return
-
-    def __index__(self, valor):
-        self._nivel_de_carga = valor
-        return
