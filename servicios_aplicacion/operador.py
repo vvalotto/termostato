@@ -8,6 +8,7 @@ import threading
 
 from gestores_entidades.gestor_bateria import *
 from gestores_entidades.gestor_ambiente import *
+from gestores_entidades.gestor_climatizador import *
 from servicios_aplicacion.presentador import *
 
 
@@ -16,7 +17,9 @@ class Operador:
     def __init__(self):
         self._gestor_bateria = GestorBateria()
         self._gestor_ambiente = GestorAmbiente()
-        self._presentador = Presentador(self._gestor_bateria, self._gestor_ambiente)
+        self._gestor_climatizador = GestorClimatizador()
+        self._presentador = Presentador(self._gestor_bateria,
+                                        self._gestor_ambiente)
 
     def lee_carga_bateria(self):
         while True:
@@ -32,11 +35,16 @@ class Operador:
             time.sleep(5)
         return
 
+    def accionar_climatizador(self):
+        while True:
+            None
+
     def muestra_parametros(self):
         while True:
             self._presentador.ejecutar()
             time.sleep(1)
         return
+
 
     def ejecutar(self):
 

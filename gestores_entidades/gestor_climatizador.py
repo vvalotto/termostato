@@ -3,6 +3,7 @@
 """
 
 from entidades.climatizador import *
+from gestores_entidades.gestor_ambiente import *
 
 
 class GestorClimatizador:
@@ -11,7 +12,7 @@ class GestorClimatizador:
         self._climatizador = Climatizador()
         return
 
-    def definir_accion(self):
+    def definir_accion(self, gestor_ambiente):
         accion = "Nada"
         #leer temperatura ambiente
         #leer temperatura desaeda
