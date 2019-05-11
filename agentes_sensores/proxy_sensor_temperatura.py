@@ -11,8 +11,10 @@ class ProxySensorTemperatura():
         Aqui lee desde la GPIO el valor que indica la bateria
         :return:
         '''
-        error = True
-        temperatura = 25
-        if error is True:
+        try:
+            archivo = open("temperatura", "r")
+            temperatura = archivo.read()
+            archivo.close()
+        except IOError:
             raise Exception("Error de Lectura de Sensor")
         return temperatura

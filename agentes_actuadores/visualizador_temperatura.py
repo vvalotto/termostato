@@ -1,14 +1,18 @@
 """
 Clase responsable de sacar el dato de las temperaturas
 a un visualizador
+Clase dummy
 """
+
 
 class VisualizadorTemperaturas:
 
-    def mostrar_temperatura_ambiente(self, temperatura_ambiente):
-        print("la temperatura ambiente es: ", temperatura_ambiente)
+    @staticmethod
+    def mostrar_temperatura_ambiente(temperatura_ambiente):
+        print(str(temperatura_ambiente))
         return
 
-    def mostrar_temperatura_deseada(self, temperatura_deseada):
-        print("la temperatura deseada es: ", temperatura_deseada)
+    @staticmethod
+    def mostrar_temperatura_deseada(temperatura_deseada):
+        print(str(temperatura_deseada))
         return

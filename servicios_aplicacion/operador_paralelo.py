@@ -1,4 +1,4 @@
-""""
+"""
 
 """
 
@@ -29,13 +29,13 @@ class Operador:
         while True:
             print("lee temperatura")
             self._gestor_ambiente.leer_temperatura_ambiente()
-            time.sleep(5)
+            time.sleep(2)
         return
 
     def muestra_parametros(self):
         while True:
             self._presentador.ejecutar()
-            time.sleep(1)
+            time.sleep(5)
         return
 
     def ejecutar(self):
@@ -51,6 +51,7 @@ class Operador:
 
         t1.start()
         t2.start()
+        time.sleep(10)
         t3.start()
 
         return
