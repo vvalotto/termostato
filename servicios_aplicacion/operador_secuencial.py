@@ -1,6 +1,7 @@
 import time
 from gestores_entidades.gestor_bateria import *
 from gestores_entidades.gestor_ambiente import *
+from gestores_entidades.gestor_climatizador import *
 from servicios_aplicacion.presentador import *
 
 
@@ -9,7 +10,10 @@ class Operador:
     def __init__(self):
         self._gestor_bateria = GestorBateria()
         self._gestor_ambiente = GestorAmbiente()
-        self._presentador = Presentador(self._gestor_bateria, self._gestor_ambiente)
+        self._gestor_climatizador = GestorClimatizador()
+        self._presentador = Presentador(self._gestor_bateria,
+                                        self._gestor_ambiente,
+                                        self._gestor_climatizador)
 
     def ejecutar(self):
 
@@ -22,7 +26,11 @@ class Operador:
 
             print("lee temperatura")
             self._gestor_ambiente.leer_temperatura_ambiente()
+            self._gestor_ambiente.ambiente.temperatura_deseada = 20
             time.sleep(1)
+
+            print("acciona climatizador")
+            self._gestor_climatizador.accionar_climatizador(self._gestor_ambiente.ambiente)
 
             print("Muestra estado")
             self._presentador.ejecutar()

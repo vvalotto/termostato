@@ -12,6 +12,10 @@ from agentes_actuadores.visualizador_temperatura import *
 
 class GestorAmbiente:
 
+    @property
+    def ambiente(self):
+        return self._ambiente
+
     def __init__(self):
         self._ambiente = Ambiente()
         self._proxy_sensor_temperatura = ProxySensorTemperatura()

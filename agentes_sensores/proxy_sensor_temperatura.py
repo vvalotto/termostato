@@ -13,7 +13,7 @@ class ProxySensorTemperatura():
         '''
         try:
             archivo = open("temperatura", "r")
-            temperatura = archivo.read()
+            temperatura = int(archivo.read())
             archivo.close()
         except IOError:
             raise Exception("Error de Lectura de Sensor")
