@@ -14,12 +14,15 @@ class GestorAmbiente:
 
     def __init__(self):
         self._ambiente = Ambiente()
-        self._proxy_sensor_temperatura = ProxySensorTemperatua()
+        self._proxy_sensor_temperatura = ProxySensorTemperatura()
         self._visualizador_temperatura = VisualizadorTemperaturas()
         return
 
     def leer_temperatura_ambiente(self):
-        self._ambiente.temperatura_ambiente = self._proxy_sensor_temperatura.leer_temperatura()
+        try:
+            self._ambiente.temperatura_ambiente = self._proxy_sensor_temperatura.leer_temperatura()
+        except Exception:
+            self._ambiente.temperatura_ambiente = None
         return
 
     def obtener_temperatura_ambiente(self):
