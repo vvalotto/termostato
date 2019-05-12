@@ -26,6 +26,6 @@ class Presentador:
         muestren
         """
         self._gestor_bateria.mostrar_nivel_de_carga()
-        self._gestor_ambiente.mostrar_temperatura_ambiente()
+        self._gestor_ambiente.mostrar_temperatura()
         self._gestor_climatizador.mostrar_estado_climatizador()
         return

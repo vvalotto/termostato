@@ -27,6 +27,7 @@ class Operador:
             print("lee temperatura")
             self._gestor_ambiente.leer_temperatura_ambiente()
             self._gestor_ambiente.ambiente.temperatura_deseada = 20
+            self._gestor_ambiente.seleccionar_temperatura()
             time.sleep(1)
 
             print("acciona climatizador")
