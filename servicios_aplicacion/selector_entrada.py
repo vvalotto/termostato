@@ -15,19 +15,17 @@ class SelectorEntradaTemperatura:
         return
 
     def ejecutar(self):
-        # ver si seleccion para setear temperatura
-        # si se setea temperatura
-        #    muestra temperatura deseadead
-        #    espera seteo
 
         while self._selector_temperatura.obtener_selector() == "deseada":
             self._gestor_ambiente.indicar_temperatura_a_mostrar("deseada")
             self._gestor_ambiente.mostrar_temperatura()
-            print(self._seteo_temperatura.obtener_seteo())
+
             opcion = self._seteo_temperatura.obtener_seteo()
+
             if  opcion == "aumentar":
                 self._gestor_ambiente.aumentar_temperatura_deseada()
             if opcion == "disminuir":
                 self._gestor_ambiente.disminuir_temperatura_deseada()
+        self._gestor_ambiente.indicar_temperatura_a_mostrar("ambiente")
         return
 

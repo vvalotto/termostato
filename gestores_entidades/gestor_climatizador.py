@@ -47,4 +47,5 @@ class GestorClimatizador:
                 accion = "apagar"
             else:
                 accion = None
+        print('accion:', accion)
         return accion
