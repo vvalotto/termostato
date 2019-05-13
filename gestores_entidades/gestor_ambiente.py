@@ -40,21 +40,12 @@ class GestorAmbiente:
         self._visualizador_temperatura.mostrar_temperatura_ambiente(self._ambiente.temperatura_ambiente)
         return
 
-    def seleccionar_temperatura(self):
-        self._ambiente.temperatura_a_mostrar = self._selector_temperatura.obtener_selector()
-        if self._ambiente.temperatura_a_mostrar == "deseada":
-            if self._seteo_temperatura.obtener_seteo() == "aumentar":
-                self.aumentar_temperatura_deseada()
-            if self._seteo_temperatura.obtener_seteo() == "disminuir":
-                self.disminuir_temperatura_deseada()
-        return
-
     def aumentar_temperatura_deseada(self):
-        self._ambiente.temperatura_deseada = +1
+        self._ambiente.temperatura_deseada += 1
         return
 
     def disminuir_temperatura_deseada(self):
-        self._ambiente.temperatura_deseada = -1
+        self._ambiente.temperatura_deseada -= 1
         return
 
     def obtener_temperatura_deseada(self):

@@ -12,6 +12,6 @@ class ControladorTemperatura:
         temperatura = "normal"
         limite_superior = temperatura_deseada + ControladorTemperatura.histeris
         limite_inferior = temperatura_deseada - ControladorTemperatura.histeris
-        if (limite_superior <= temperatura_actual): temperatura = "alta"
-        if (limite_inferior >= temperatura_actual): temperatura = "baja"
+        if (limite_superior < temperatura_actual): temperatura = "alta"
+        if (limite_inferior > temperatura_actual): temperatura = "baja"
         return temperatura
