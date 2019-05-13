@@ -4,7 +4,6 @@ from gestores_entidades.gestor_ambiente import *
 from gestores_entidades.gestor_climatizador import *
 from servicios_aplicacion.selector_entrada import *
 from servicios_aplicacion.presentador import *
-import os
 
 class Operador:
 
@@ -19,7 +18,6 @@ class Operador:
 
     def ejecutar(self):
 
-        os.system('clear')
         print("inicio")
 
         self._gestor_ambiente.ambiente.temperatura_deseada = 23
@@ -44,7 +42,5 @@ class Operador:
             print("Muestra estado")
             self._presentador.ejecutar()
             time.sleep(5)
-
-            os.system('clear')
 
         return

@@ -17,15 +17,21 @@ class SelectorEntradaTemperatura:
     def ejecutar(self):
 
         while self._selector_temperatura.obtener_selector() == "deseada":
-            self._gestor_ambiente.indicar_temperatura_a_mostrar("deseada")
-            self._gestor_ambiente.mostrar_temperatura()
-
-            opcion = self._seteo_temperatura.obtener_seteo()
-
-            if  opcion == "aumentar":
-                self._gestor_ambiente.aumentar_temperatura_deseada()
-            if opcion == "disminuir":
-                self._gestor_ambiente.disminuir_temperatura_deseada()
+            self._mostrar_temperatura_deseada()
+            self._obtener_seteo_temperatura_deseada()
         self._gestor_ambiente.indicar_temperatura_a_mostrar("ambiente")
         return
 
+    def _mostrar_temperatura_deseada(self):
+        self._gestor_ambiente.indicar_temperatura_a_mostrar("deseada")
+        self._gestor_ambiente.mostrar_temperatura()
+        return
+
+    def _obtener_seteo_temperatura_deseada(self):
+        opcion = self._seteo_temperatura.obtener_seteo()
+
+        if opcion == "aumentar":
+            self._gestor_ambiente.aumentar_temperatura_deseada()
+        if opcion == "disminuir":
+            self._gestor_ambiente.disminuir_temperatura_deseada()
+        return

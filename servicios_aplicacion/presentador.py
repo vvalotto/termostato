@@ -25,7 +25,17 @@ class Presentador:
         Se sacan los valores de los parametros para que se
         muestren
         """
+        print("-------------- BATERIA -------------")
         self._gestor_bateria.mostrar_nivel_de_carga()
+        self._gestor_bateria.mostrar_indicador_de_carga()
+        print("------------------------------------")
+        print("\n")
+        print("------------ TEMPERATURA ----------")
         self._gestor_ambiente.mostrar_temperatura()
+        print("------------------------------------")
+        print("\n")
+        print("------------ CLIMATIZADOR ----------")
         self._gestor_climatizador.mostrar_estado_climatizador()
+        print("------------------------------------")
+        print("\n")
         return
