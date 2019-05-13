@@ -19,6 +19,7 @@ class Bateria:
     def nivel_de_carga(self, valor):
         if valor <= Bateria.carga_maxima * 0.80:
             self._indicador = "BAJA"
+            self._nivel_de_carga = valor
         else:
             self._indicador = "NORMAL"
         self._nivel_de_carga = valor
