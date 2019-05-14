@@ -1,6 +1,8 @@
 """
-
+Clase que simula el accionamiento del climatizador.
+Aqui la acción es escribir en un archivo externo
 """
+
 
 class ActuadorClimatizador:
 

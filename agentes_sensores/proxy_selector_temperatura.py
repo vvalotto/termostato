@@ -1,5 +1,5 @@
 """
-
+Clase que simula la lectura de un boton de seleccion
 """
 
 

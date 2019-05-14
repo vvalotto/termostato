@@ -1,5 +1,5 @@
 """
-
+Clase que simula el cambio de la temperatura deseada
 """
 
 

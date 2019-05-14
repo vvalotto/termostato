@@ -26,7 +26,6 @@ class Ambiente:
     @property
     def temperatura_a_mostrar(self):
         return self._temperatura_a_mostrar
-        return
 
     @temperatura_a_mostrar.setter
     def temperatura_a_mostrar(self, valor):
