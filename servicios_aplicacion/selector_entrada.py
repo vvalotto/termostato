@@ -1,5 +1,5 @@
 """
-
+Clase Responsable del establecimiento de la temperatura deseada
 """
 from agentes_sensores.proxy_seteo_temperatura import *
 from agentes_sensores.proxy_selector_temperatura import *
@@ -9,6 +9,9 @@ from gestores_entidades.gestor_ambiente import *
 class SelectorEntradaTemperatura:
 
     def __init__(self, gestor_ambiente):
+        """
+        Arma la clases con la que necesita colaborar
+        """
         self._seteo_temperatura = SeteoTemperatura()
         self._selector_temperatura = SelectorTemperatura()
         self._gestor_ambiente = gestor_ambiente
@@ -16,6 +19,13 @@ class SelectorEntradaTemperatura:
 
     def ejecutar(self):
 
+        """
+        Ejecucion periodica para observar si el usuario quiere
+        setear la temperatura
+        En caso que asi sea, se queda ciclando para leer el ingreso
+        de las consignas
+        :return:
+        """
         while self._selector_temperatura.obtener_selector() == "deseada":
             self._mostrar_temperatura_deseada()
             self._obtener_seteo_temperatura_deseada()

@@ -1,3 +1,12 @@
+"""
+Es la clase responsable de orquestar de manera ciclica
+la lectura de los dispositivos externos y el accionamiento
+del climatizador de acuerdo al seteo de la temperatura
+ambiente.
+Las responsbilidades específicas son delegadas a los gestores
+y procesos correspondientes
+"""
+
 import time
 from gestores_entidades.gestor_bateria import *
 from gestores_entidades.gestor_ambiente import *
@@ -5,9 +14,14 @@ from gestores_entidades.gestor_climatizador import *
 from servicios_aplicacion.selector_entrada import *
 from servicios_aplicacion.presentador import *
 
-class Operador:
+
+class OperadorSecuencial:
 
     def __init__(self):
+        """
+        Arma la dependencia con las clases con las que va
+        a trabajar
+        """
         self._gestor_bateria = GestorBateria()
         self._gestor_ambiente = GestorAmbiente()
         self._gestor_climatizador = GestorClimatizador()
@@ -20,8 +34,12 @@ class Operador:
 
         print("inicio")
 
-        self._gestor_ambiente.ambiente.temperatura_deseada = 23
+        # Setea la temperatura deseada por defecto
+        # (esta linea es temporal para la entrega 2
+        self._gestor_ambiente.ambiente.temperatura_deseada = 24
 
+        'Ciclo infinito que establece la secuencia de acciones' \
+        'del termostato'
         while True:
             print("lee_bateria")
             self._gestor_bateria.verificar_nivel_de_carga()
@@ -43,4 +61,4 @@ class Operador:
             self._presentador.ejecutar()
             time.sleep(5)
 
-        return
+        # FIN DEL BUCLE

@@ -13,7 +13,7 @@ from servicios_aplicacion.selector_entrada import *
 from servicios_aplicacion.presentador import *
 
 
-class Operador:
+class OperadorParalelo:
 
     def __init__(self):
         self._gestor_bateria = GestorBateria()
